@@ -3,31 +3,55 @@
     padding: 0;
     box-sizing: border-box;
     align-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
 }
-button {
-  width: 25%;
-  height: 25%;
-  border: 1px solid navy
-}
+
 .calculator {
   display: flex;
   flex-wrap: wrap;
   flex-direction:column;
   margin: auto;
-border: 2px solid black;
-height: 100vh;
-width: 75vh;
+  border: 2px solid black;
+  height: 100vh;
+  width: 75vh;    
+}
+#display {
+  height: 20%;
+  border: 2px solid black;
+  text-align: right;
+  flex-grow: 0;
 }
 .buttons {
   display: flex;
   flex-wrap: wrap;
+  flex-grow: 1;
+  height: 80%;
+  width: 100%;
  }
+ button {
+  flex-grow: 1 1 100%;
+  border: 1px solid navy;
+}
+button:hover {
+  filter: brightness(115%);
+}
+button:active {
+  filter: brightness(85%);
+}
+
 .number {
   background-color: mediumaquamarine;
-  flex-basis: 25%;
+  flex: 1 0 25%;
+  height: 25%;
 }
 .operator {
   background-color: lightcoral;
-  flex-basis: 25%;
+  flex: 1 0 25%;
+  height: 25%;
+}
+#equalTo-button {
+  background-color: gold;
+  flex: 1 0 25%;
+  height: 25%;
 }
 
