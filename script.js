@@ -20,7 +20,19 @@ const eightButton = document.getElementById("eight-button");
 const nineButton = document.getElementById("nine-button");
 const zeroButton = document.getElementById("zero-button");
 const dotButton = document.getElementById("dot-button");
+const clearButton = document.getElementById("clear-button");
 const display = document.getElementById("display");
+const allButtons = document.querySelectorAll(".number, .operator");
+
+allButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    if (result !== undefined) {
+      result = undefined;
+      currentNumber = "";
+    }
+    // handle operator/number logic here...
+  });
+});
 
 //// button event listeners
 
@@ -52,75 +64,95 @@ divideButton.addEventListener('click', () => {
 
 });
 equalButton.addEventListener('click', () => {
+    if (result === currentNumber) {
+      firstNumber = result;
+      secondNumber = '';
+    }
   resolveOperation();
 });
-
+clearButton.addEventListener('click', () => {
+  currentNumber = '';
+  firstNumber = '';
+  operator = undefined;
+  result = undefined;
+  refreshDisplay();
+})
 // numbers
 oneButton.addEventListener('click', () => {
-  if (currentNumber === result) {
+  if (result !== undefined) {
+    result = undefined;
     currentNumber = '';
   }
   currentNumber += '1';
   refreshDisplay();
 });
 twoButton.addEventListener('click', () => {
-    if (currentNumber === result) {
+    if (result !== undefined) {
+    result = undefined;
     currentNumber = '';
   }
   currentNumber += '2';
   refreshDisplay();
 });
 threeButton.addEventListener('click', () => {
-    if (currentNumber === result) {
+    if (result !== undefined) {
+    result = undefined;
     currentNumber = '';
   }
   currentNumber += '3';
   refreshDisplay();
 });
 fourButton.addEventListener('click', () => {
-    if (currentNumber === result) {
+    if (result !== undefined) {
+    result = undefined;
     currentNumber = '';
   }
   currentNumber += '4';
   refreshDisplay();
 });
 fiveButton.addEventListener('click', () => {
-    if (currentNumber === result) {
+    if (result !== undefined) {
+    result = undefined;
     currentNumber = '';
   }
   currentNumber += '5';
   refreshDisplay();
 });
 sixButton.addEventListener('click', () => {
-    if (currentNumber === result) {
+    if (result !== undefined) {
+    result = undefined;
     currentNumber = '';
   }
   currentNumber += '6';
   refreshDisplay();
 });
 sevenButton.addEventListener('click', () => {
-    if (currentNumber === result) {
+    if (result !== undefined) {
+    result = undefined;
     currentNumber = '';
   }
   currentNumber += '7';
   refreshDisplay();
 });
 eightButton.addEventListener('click', () => {
-    if (currentNumber === result) {
+    if (result !== undefined) {
+    result = undefined;
     currentNumber = '';
   }
   currentNumber += '8';
   refreshDisplay();
 });
 nineButton.addEventListener('click', () => {
-    if (currentNumber === result) {
+    if (result !== undefined) {
+    result = undefined;
     currentNumber = '';
   }
   currentNumber += '9';
   refreshDisplay();
 });
 zeroButton.addEventListener('click', () => {
-    if (currentNumber === result) {
+    if (result !== undefined) {
+    result = undefined;
     currentNumber = '';
   }
   else if (currentNumber === '' || currentNumber === '0') {
@@ -132,6 +164,15 @@ zeroButton.addEventListener('click', () => {
   refreshDisplay();
 });
 dotButton.addEventListener('click', () => {
+      if (result !== undefined) {
+    result = undefined;
+    currentNumber = '';
+  }
+  else if (currentNumber === '' || currentNumber === '0') {
+    currentNumber = '';
+    refreshDisplay();
+    return;
+  }
   currentNumber += '.';
   refreshDisplay();
 });
@@ -152,12 +193,16 @@ function operation(firstNumber, currentNumber, operator) {
 
 function resolveOperation() {
   result = operation(firstNumber, currentNumber, operator);
-  currentNumber = result;
+  firstNumber = result;
   refreshDisplay();
 }
 
 function refreshDisplay(extra = '') {
-  if (currentNumber === '') {
+  if (result !== undefined) {
+    display.textContent = result + extra;
+    return;
+  }
+  else if (currentNumber === '') {
     display.textContent = '0' + extra;
     return;
   }

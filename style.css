@@ -2,56 +2,80 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    align-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+        segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto,
+        helvetica, arial, sans-serif;
 }
 
 .calculator {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction:column;
-  margin: auto;
-  border: 2px solid black;
-  height: 100vh;
-  width: 75vh;    
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border: 2px solid black;
+    height: 100vh;
+    max-width: 75%;
 }
 #display {
-  height: 20%;
-  border: 2px solid black;
-  text-align: right;
-  flex-grow: 0;
+    flex: 1;
+    border: 2px solid black;
+    text-align: right;
+    font-size: 2rem;
+    padding: 10px;
+    color: lightgray;
 }
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  height: 80%;
-  width: 100%;
- }
- button {
-  flex-grow: 1 1 100%;
-  border: 1px solid navy;
-}
-button:hover {
-  filter: brightness(115%);
-}
-button:active {
-  filter: brightness(85%);
+.keypad {
+    display: flex;
+    flex: 4;
 }
 
+.buttons {
+    flex: 3;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.equal-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 .number {
-  background-color: mediumaquamarine;
-  flex: 1 0 25%;
-  height: 25%;
+    background-color: mediumaquamarine;
 }
 .operator {
-  background-color: lightcoral;
-  flex: 1 0 25%;
-  height: 25%;
+    background-color: lightcoral;
 }
 #equalTo-button {
-  background-color: gold;
-  flex: 1 0 25%;
-  height: 25%;
+    background-color: gold;
+flex: 4;
+}
+#divide-button {
+    flex: 1;
+}
+
+button {
+  border: none;
+    flex: 1;
+    font-size: 1.2rem;
+    min-width: calc(100%/3);
+}
+button:hover {
+    filter: brightness(115%);
+}
+button:active {
+    filter: brightness(85%);
+}
+button > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border: 1px solid navy;
+}
+footer, header {
+    text-align: center;
+    margin: 10px;
+    font-size: 0.9rem;
+    color: gray;
 }
 
