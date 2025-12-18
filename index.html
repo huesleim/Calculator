@@ -1,40 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title> Calculator </title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body> 
-    <header>  </header>
-    <div class='calculator'>
-      <div id='display'>  CALCULATOR </div> 
-      <div class='keypad'>
-      <div class='buttons'>
-      <button class='operator' id="plus-button"> <span>+</span> </button>
-      <button class='operator' id="minus-button"> <span>-</span> </button>
-      <button class='operator' id="multiply-button"> <span>x</span> </button>
-      <button class='number' id="one-button"> <span>1</span> </button>
-      <button class='number' id="two-button"> <span>2</span> </button>
-      <button class='number' id="three-button"> <span>3</span> </button>
-      <button class='number' id="four-button"> <span>4</span> </button>
-      <button class='number' id="five-button"> <span>5</span> </button>
-      <button class='number' id="six-button"> <span>6</span> </button>
-      <button class='number' id="seven-button"> <span>7</span> </button>
-      <button class='number' id="eight-button"> <span>8</span> </button>
-      <button class='number' id="nine-button"> <span>9</span> </button>
-      <button class='number' id="dot-button"> <span>.</span> </button>
-      <button class='number' id="zero-button"> <span>0</span> </button>
-      <button class='operator' id="clear-button"> <span>C</span> </button>
-      </div>
-    <div class="equal-column"> 
-      <button class='operator' id="divide-button"> <span>÷</span> </button>
-      <button class='operator' id="equalTo-button"> <span>=</span> </button>
-    </div>
-  </div>
-</div>
-    <footer> Made by Hueslei Miranda for The Odin Project </footer>
-    <script src="script.js"></script>
-  </body>
-
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculator</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <select name="skin" id="skin-select">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="pastel">Pastel</option>
+            </select>
+        </header>
+        <div class="calculator">
+            <div id="display">CALCULATOR</div>
+            <div class="keypad">
+                <div class="buttons">
+                    <button class="operator" id="plus-button">
+                        <span>+</span>
+                    </button>
+                    <button class="operator" id="minus-button">
+                        <span>-</span>
+                    </button>
+                    <button class="operator" id="multiply-button">
+                        <span>x</span>
+                    </button>
+                    <button class="number" id="one-button">
+                        <span>1</span>
+                    </button>
+                    <button class="number" id="two-button">
+                        <span>2</span>
+                    </button>
+                    <button class="number" id="three-button">
+                        <span>3</span>
+                    </button>
+                    <button class="number" id="four-button">
+                        <span>4</span>
+                    </button>
+                    <button class="number" id="five-button">
+                        <span>5</span>
+                    </button>
+                    <button class="number" id="six-button">
+                        <span>6</span>
+                    </button>
+                    <button class="number" id="seven-button">
+                        <span>7</span>
+                    </button>
+                    <button class="number" id="eight-button">
+                        <span>8</span>
+                    </button>
+                    <button class="number" id="nine-button">
+                        <span>9</span>
+                    </button>
+                    <button class="number" id="dot-button">
+                        <span>.</span>
+                    </button>
+                    <button class="number" id="zero-button">
+                        <span>0</span>
+                    </button>
+                    <button id="clear-button">
+                        <span>C</span>
+                    </button>
+                </div>
+                <div class="equal-column">
+                    <button class="operator" id="divide-button">
+                        <span>÷</span>
+                    </button>
+                    <button id="equalTo-button">
+                        <span>=</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <footer>Made by Hueslei Miranda for The Odin Project</footer>
+        <script src="script.js"></script>
+    </body>
+</html>
