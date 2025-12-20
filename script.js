@@ -5,30 +5,21 @@ let firstNumber = "";
 let secondNumber = "";
 let currentNumber = "";
 const equalButton = document.getElementById("equalTo-button");
-const plusButton = document.getElementById("plus-button");
-const minusButton = document.getElementById("minus-button");
-const multiplyButton = document.getElementById("multiply-button");
-const divideButton = document.getElementById("divide-button");
-const oneButton = document.getElementById("one-button");
-const twoButton = document.getElementById("two-button");
-const threeButton = document.getElementById("three-button");
-const fourButton = document.getElementById("four-button");
-const fiveButton = document.getElementById("five-button");
-const sixButton = document.getElementById("six-button");
-const sevenButton = document.getElementById("seven-button");
-const eightButton = document.getElementById("eight-button");
-const nineButton = document.getElementById("nine-button");
-const zeroButton = document.getElementById("zero-button");
-const dotButton = document.getElementById("dot-button");
 const clearButton = document.getElementById("clear-button");
 const display = document.getElementById("display");
 const numbers = document.querySelectorAll(".number");
 const operators = document.querySelectorAll(".operator");
 const skinSelect = document.getElementById("skin-select");
 const skinColor = skinSelect.value;
+const root = document.documentElement;
+
+// event listeners
 
 numbers.forEach(button => {
     button.addEventListener("click", () => {
+      if (currentNumber.length === 12) {
+        return;
+      }
         if (result !== undefined) {
             currentNumber = "";
             result = undefined;
@@ -69,10 +60,6 @@ operators.forEach(button => {
         firstNumber = currentNumber;
         currentNumber = "";
     })});
-//// button event listeners
-// skin picker
-skinSelect.addEventListener("change", skinChange);
-// operators
 
 equalButton.addEventListener("click", () => {
     if (result === currentNumber) {
@@ -81,6 +68,7 @@ equalButton.addEventListener("click", () => {
     }
     resolveOperation();
 });
+
 clearButton.addEventListener("click", () => {
     currentNumber = "";
     firstNumber = "";
@@ -88,6 +76,8 @@ clearButton.addEventListener("click", () => {
     result = undefined;
     refreshDisplay();
 });
+
+skinSelect.addEventListener("change", skinChange);
 
 // functions
 function operation(firstNumber, currentNumber, operator) {
@@ -125,15 +115,43 @@ function skinChange(event) {
 
     switch (value) {
         case "dark":
-            numbers.forEach((n) => (n.style.backgroundColor = "black"));
-            operators.forEach((o) => (o.style.backgroundColor = "darkgrey"));
+            root.style.setProperty('--numbers-background-color', 'lightgrey');
+         root.style.setProperty('--operators-background-color', 'darkgrey');
+         root.style.setProperty('--display-background-color', 'white');
+         root.style.setProperty('--clear-background-color', '#3B514A');
+         root.style.setProperty('--equalTo-background-color', 'darkgrey');
+         root.style.setProperty('--text-background-color', 'black');
+         root.style.setProperty('--display-text-color', '#2D423C');
+                root.style.setProperty('--background-color','#2D423C' );
+        root.style.setProperty('--button-border-color', '#2D423C');
             break;
-
+        
+        case "light":
+        root.style.setProperty('--numbers-background-color', '#ededed');
+         root.style.setProperty('--operators-background-color', 'lightblue');
+         root.style.setProperty('--display-background-color', ' #ededed');
+         root.style.setProperty('--clear-background-color', 'orange');
+         root.style.setProperty('--equalTo-background-color', '#E50010');
+         root.style.setProperty('--text-background-color', 'black');
+         root.style.setProperty('--display-text-color', 'darkgrey');
+                root.style.setProperty('--background-color','#ededed' );    
+        root.style.setProperty('--button-border-color', 'grey');
+        break;
+        
+        
         case "pastel":
-            numbers.forEach(
-                (n) => (n.style.backgroundColor = "mediumaquamarine")
-            );
-            operators.forEach((o) => (o.style.backgroundColor = "coral"));
-            break;
+        root.style.setProperty('--numbers-background-color', '#E6E6B9');
+         root.style.setProperty('--operators-background-color', '#B8E6E0');
+         root.style.setProperty('--display-background-color', 'white');
+         root.style.setProperty('--clear-background-color', '#664333');
+         root.style.setProperty('--equalTo-background-color', '#E6C6B8');
+         root.style.setProperty('--text-background-color', 'black');
+         root.style.setProperty('--display-text-color', '#664333');
+        root.style.setProperty('--background-color','#E6E6B9' );
+                root.style.setProperty('--button-border-color', '#664333');
+        break;
     }
 }
+
+
+
