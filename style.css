@@ -1,13 +1,13 @@
-:root{
-  --numbers-background-color:#ededed;
+:root {
+    --numbers-background-color: #ededed;
     --operators-background-color: lightblue;
     --display-background-color: #ededed;
     --clear-background-color: orange;
-    --equalTo-background-color: #E50010;
+    --equalTo-background-color: #e50010;
     --text-background-color: black;
     --display-text-color: darkgrey;
-  --background-color: #ededed;
-  --button-border-color: grey;
+    --background-color: #ededed;
+    --button-border-color: grey;
 }
 
 * {
@@ -17,19 +17,17 @@
     font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
         segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto,
         helvetica, arial, sans-serif;
-
 }
-
 
 body {
     background-color: var(--background-color);
 }
 header {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 select {
-  width: 10%;
+    width: 10%;
 }
 .calculator {
     display: flex;
@@ -47,8 +45,6 @@ select {
     padding: 10px;
     color: var(--display-text-color);
     background-color: var(--display-background-color);
-  
-  
 }
 .keypad {
     display: flex;
@@ -72,22 +68,22 @@ select {
 .operator {
     background-color: var(--operators-background-color);
 }
-#clear-button{
-  background-color: var(--clear-background-color);
+#clear-button {
+    background-color: var(--clear-background-color);
 }
 #equalTo-button {
     background-color: var(--equalTo-background-color);
-flex: 4;
+    flex: 4;
 }
 #divide-button {
     flex: 1;
 }
 
 button {
-  border: none;
+    border: none;
     flex: 1;
     font-size: 1.2rem;
-    min-width: calc(100%/3);
+    min-width: calc(100% / 3);
 }
 button:hover {
     filter: brightness(115%);
@@ -102,12 +98,10 @@ button > span {
     height: 100%;
     border: 1px solid var(--button-border-color);
 }
-footer, header {
+footer,
+header {
     text-align: center;
     margin: 10px;
     font-size: 0.9rem;
     color: gray;
 }
-
-
-
